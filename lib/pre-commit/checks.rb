@@ -10,6 +10,7 @@ require 'pre-commit/checks/migration_check'
 require 'pre-commit/checks/ci_check'
 require 'pre-commit/checks/php_check'
 require 'pre-commit/checks/ruby_symbol_hashrockets'
+require 'pre-commit/checks/sanity'
 
 class PreCommit
 
@@ -40,7 +41,8 @@ class PreCommit
     :migrations              => MigrationCheck.new,
     :ci                      => CiCheck.new,
     :php                     => PhpCheck.new,
-    :ruby_symbol_hashrockets => RubySymbolHashrockets
+    :ruby_symbol_hashrockets => RubySymbolHashrockets,
+    :sanity                  => Sanity
   }
 
   # Can not delete this method with out a deprecation strategy.
