@@ -32,16 +32,15 @@ class Sanity
   BAD_CHARACTER_PATTERN = ' | ' # invisible utf-8 characters...
 
   def detected_bad_code?
-    system "grep -PnIH -q '#{BAD_CHARACTER_PATTERN}' #{staged_files}"
+    system("#{Utils.grep} -q '#{BAD_CHARACTER_PATTERN}' #{staged_files}")
   end
 
   def violations
-    `grep -PnIH '#{BAD_CHARACTER_PATTERN}' #{staged_files}`
+    `#{Utils.grep} '#{BAD_CHARACTER_PATTERN}' #{staged_files}`
   end
 
   def print_dash_n_reminder
     $stderr.puts 'You can bypass this check using `git commit -n`'
     $stderr.puts
   end
-
 end
