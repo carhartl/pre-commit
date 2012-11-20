@@ -6,6 +6,7 @@ require 'pre-commit/checks/console_log'
 require 'pre-commit/checks/debugger_check'
 require 'pre-commit/checks/jslint_check'
 require 'pre-commit/checks/jshint_check'
+require 'pre-commit/checks/closure_linter'
 require 'pre-commit/checks/migration_check'
 require 'pre-commit/checks/ci_check'
 require 'pre-commit/checks/php_check'
@@ -35,6 +36,7 @@ class PreCommit
     :js_lint_all             => JslintCheck.new(:all),
     :js_lint_new             => JslintCheck.new(:new),
     :jshint                  => JshintCheck.new,
+    :closure_linter          => ClosureLinter,
     :debugger                => DebuggerCheck,
     :tabs                    => Tabs,
     :closure_syntax_check    => ClosureSyntaxCheck,
