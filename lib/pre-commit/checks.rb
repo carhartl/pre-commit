@@ -11,6 +11,7 @@ require 'pre-commit/checks/ci_check'
 require 'pre-commit/checks/php_check'
 require 'pre-commit/checks/ruby_symbol_hashrockets'
 require 'pre-commit/checks/sanity'
+require 'pre-commit/checks/scss_lint'
 
 class PreCommit
 
@@ -42,7 +43,8 @@ class PreCommit
     :ci                      => CiCheck.new,
     :php                     => PhpCheck.new,
     :ruby_symbol_hashrockets => RubySymbolHashrockets,
-    :sanity                  => Sanity
+    :sanity                  => Sanity,
+    :scss_lint               => ScssLint
   }
 
   # Can not delete this method with out a deprecation strategy.
