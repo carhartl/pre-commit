@@ -1,7 +1,7 @@
 class ScssLint
   attr_accessor :staged_files, :error_message
 
-  BAD_FORMATTING_PATTERN = ':  |:[^;]+$|;;$|^.+[^ ]{|,[^ ]'
+  BAD_FORMATTING_PATTERN = ':  |:[^;]+$|;;$|^.+[^ ]{|,[^ ]| 0px| 0em| 0%'
 
   def self.call
     check = new

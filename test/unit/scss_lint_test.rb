@@ -12,7 +12,7 @@ class ScssLintTest < MiniTest::Unit::TestCase
   def test_should_detect_all_violations
     check = ScssLint.new
     check.staged_files = test_filename('wrong_scss.scss')
-    assert_equal 5, check.violations[:lines].split("\n").size
+    assert_equal 8, check.violations[:lines].split("\n").size
   end
 
   def test_does_not_detect_bad_code_in_a_valid_file
