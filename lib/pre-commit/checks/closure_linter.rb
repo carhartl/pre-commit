@@ -39,7 +39,7 @@ class ClosureLinter
   def violations
     @violations ||= begin
       lines = `gjslint --nojsdoc --nobeep #{staged_js_files}`
-      success = $?.exitstatus == 3
+      success = $?.exitstatus > 0
 
       { :lines => lines, :success => success }
     end
